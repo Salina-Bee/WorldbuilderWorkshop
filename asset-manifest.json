@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/WorldbuilderWorkshop/static/css/main.073c9b0a.css",
+    "main.js": "/WorldbuilderWorkshop/static/js/main.77026fbd.js",
+    "static/js/787.af08e1ca.chunk.js": "/WorldbuilderWorkshop/static/js/787.af08e1ca.chunk.js",
+    "static/media/logo.svg": "/WorldbuilderWorkshop/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/WorldbuilderWorkshop/index.html",
+    "main.073c9b0a.css.map": "/WorldbuilderWorkshop/static/css/main.073c9b0a.css.map",
+    "main.77026fbd.js.map": "/WorldbuilderWorkshop/static/js/main.77026fbd.js.map",
+    "787.af08e1ca.chunk.js.map": "/WorldbuilderWorkshop/static/js/787.af08e1ca.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.77026fbd.js"
+  ]
+}
