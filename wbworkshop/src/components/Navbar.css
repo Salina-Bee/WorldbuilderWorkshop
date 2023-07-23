@@ -1,0 +1,53 @@
+.center-navbar {
+  max-height: 10%;
+}
+
+.center-navbar .nav-item a {
+  color: #F2F2F0;
+  margin-left: 15px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.navbar {
+  font-weight: bold;
+  font-size: 15px;
+  color: #F2F2F0;
+  background-color:#1B2941;
+}
+
+.navbar .navbar-brand {
+  color: #F2F2F0; 
+  font-size: 17px;
+  margin-left: 20px;
+}
+
+.navbar .navbar-brand:hover {
+  color: #F2F2F0;;  
+}
+
+.navbar-toggler {
+  color: #F2F2F0;
+}
+
+.nav-item a:hover {
+  color:#396E9C;
+}
+
+.nav-item .signInButton {
+  background-color: #396E9C;
+  border: none;
+  color: #F2F2F0;
+  font-weight:bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-item .signInButton:hover {
+  background-color: #318EAD;
+}
+
+
