@@ -1,28 +1,34 @@
 {
   "files": {
-    "main.css": "/WorldbuilderWorkshop/static/css/main.e1311fcc.css",
-    "main.js": "/WorldbuilderWorkshop/static/js/main.663a94c4.js",
+    "main.css": "/WorldbuilderWorkshop/static/css/main.f66b8dea.css",
+    "main.js": "/WorldbuilderWorkshop/static/js/main.0d44ee9a.js",
     "static/js/787.af08e1ca.chunk.js": "/WorldbuilderWorkshop/static/js/787.af08e1ca.chunk.js",
     "static/media/products.png": "/WorldbuilderWorkshop/static/media/products.45abb685e4f72993ae52.png",
     "static/media/signup.jpg": "/WorldbuilderWorkshop/static/media/signup.73ba68814ab537d8f9f8.jpg",
+    "static/media/home.png": "/WorldbuilderWorkshop/static/media/home.afacab200d8357ea1e60.png",
     "static/media/customprop2.png": "/WorldbuilderWorkshop/static/media/customprop2.e9d1848682fb67d3dd49.png",
+    "static/media/404img.png": "/WorldbuilderWorkshop/static/media/404img.98c0db5e86d393e04e4b.png",
+    "static/media/home2.png": "/WorldbuilderWorkshop/static/media/home2.2943b17cf5e13868aea3.png",
     "static/media/customprop3.png": "/WorldbuilderWorkshop/static/media/customprop3.66acd1b3e07a161eb8f5.png",
+    "static/media/home3.png": "/WorldbuilderWorkshop/static/media/home3.17b08b7d0c1d067687f0.png",
     "static/media/community.jpg": "/WorldbuilderWorkshop/static/media/community.c0e7b88ef54c6bda38ee.jpg",
     "static/media/signin.jpg": "/WorldbuilderWorkshop/static/media/signin.ff990fecdfc859191246.jpg",
-    "static/media/homepage_art2.jpg": "/WorldbuilderWorkshop/static/media/homepage_art2.96c91777da709d669119.jpg",
-    "static/media/logo1.png": "/WorldbuilderWorkshop/static/media/logo1.67bccc973520516f1eab.png",
+    "static/media/home1.png": "/WorldbuilderWorkshop/static/media/home1.16357310aab4729e667b.png",
+    "static/media/logo.png": "/WorldbuilderWorkshop/static/media/logo.a58d31f5bbb5867c55e4.png",
     "static/media/services.jpg": "/WorldbuilderWorkshop/static/media/services.f6c2e8035eed78a528cd.jpg",
     "static/media/customprop1.jpg": "/WorldbuilderWorkshop/static/media/customprop1.a6538ab1f500cac83d67.jpg",
     "static/media/3dprinting1.jpg": "/WorldbuilderWorkshop/static/media/3dprinting1.9e9581268012e92ae71b.jpg",
+    "static/media/world.png": "/WorldbuilderWorkshop/static/media/world.651f2e3b7000cf57bc09.png",
     "static/media/3dprinting3.jpg": "/WorldbuilderWorkshop/static/media/3dprinting3.b196d699bb3293020a59.jpg",
     "static/media/3dprinting2.jpg": "/WorldbuilderWorkshop/static/media/3dprinting2.2c9e595a589e1f2c161b.jpg",
+    "static/media/profile.png": "/WorldbuilderWorkshop/static/media/profile.30b496116e65308d3d4d.png",
     "index.html": "/WorldbuilderWorkshop/index.html",
-    "main.e1311fcc.css.map": "/WorldbuilderWorkshop/static/css/main.e1311fcc.css.map",
-    "main.663a94c4.js.map": "/WorldbuilderWorkshop/static/js/main.663a94c4.js.map",
+    "main.f66b8dea.css.map": "/WorldbuilderWorkshop/static/css/main.f66b8dea.css.map",
+    "main.0d44ee9a.js.map": "/WorldbuilderWorkshop/static/js/main.0d44ee9a.js.map",
     "787.af08e1ca.chunk.js.map": "/WorldbuilderWorkshop/static/js/787.af08e1ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1311fcc.css",
-    "static/js/main.663a94c4.js"
+    "static/css/main.f66b8dea.css",
+    "static/js/main.0d44ee9a.js"
   ]
 }
