@@ -1,0 +1,19 @@
+{
+	"translation": {
+		"title": "The Worldbuilder's Workshop",
+		"lang": "EN",
+		"link1": "Home",
+		"link2": "Products",
+		"link3": "Services",
+		"link4": "Community",
+		"signIn": "Sign In",
+		"signOut": "Sign Out",
+		"myPosts": "My Posts",
+		"printing": "3D Printing",
+		"commissions": "Prop Commissions",
+		"printingBody": "[A brief description of what this service entails and its options. Cost is based on the type and amount of filament used per gram.]",
+		"commissionsBody": "[A brief description of what this service entails and its options. Cost is based on the user's budget, cost of materials, and the service flat rate.]",
+		"reservePrinter": "Reserve Printer",
+		"commissionItem": "Commission Item"
+	}
+}

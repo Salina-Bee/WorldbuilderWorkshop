@@ -34,14 +34,11 @@ const ProductDetails = () => {
 			<Col xs={6}>
 
 			<Row className="justify-content-center">
-					<Col xs={1} className="bannerBBG">
-					</Col>
-					<Col xs={10} className="bannerBG">
+					<Col xs={12} className="bannerBG">
 					<h4 className="bannerTitle">{productInfo[0]["name"]}</h4>
 					</Col>
-					<Col xs={1} className="bannerBBG">
-					</Col>
 			</Row>
+			<br/>
 			<br/>
 			<Row>
 				<Col>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -19,6 +20,20 @@ import commission3 from '../images/customprop3.png';
 
 const Services = () => {
 
+	const {t, i18n} = useTranslation();
+
+ 	 const changeLanguage = (lng) => {
+    	i18n.changeLanguage(lng);
+  	}
+
+  	const swapLanguage = () => {
+    	if (i18n.language === 'en') {
+      		changeLanguage('fr');
+    	} else {
+      	changeLanguage('en');
+    	}
+  	};
+
 	return (
 		<div>
 			<Container>
@@ -30,7 +45,7 @@ const Services = () => {
 					<Col xs={1} className="bannerBBG">
 					</Col>
 					<Col xs={10} className="bannerBG">
-					<h4 className="bannerTitle">Services</h4>
+					<h4 className="bannerTitle">{t("link3")}</h4>
 					</Col>
 					<Col xs={1} className="bannerBBG">
 					</Col>
@@ -48,7 +63,7 @@ const Services = () => {
 
 				<Col xs={4} style={{"margin-right":"10px"}}>
 
-				<Card style={{'border': 'none', 'width': '30rem'}} className="mx-auto">
+				<Card style={{'border': 'none', 'width': '30rem', 'backgroundColor': '#1d6957'}} className="mx-auto">
 			      <Card.Body>
 
 
@@ -80,17 +95,16 @@ const Services = () => {
 				      </Carousel.Item>
 				    </Carousel>
 
-			        <Card.Title>3D Printing</Card.Title>
+			        <Card.Title style={{"color":"#F2F2F0"}}>{t("printing")}</Card.Title>
 
-			        <Card.Text style={{"margin-bottom":"10px" , "margin-top":"20px", "margin-left":"15px"}}>
+			        <Card.Text style={{"margin-bottom":"10px" , "margin-top":"20px", "margin-left":"15px", "color":"#F2F2F0"}}>
 			        
-			        [A brief description of what this service entails and its options. 
-			        Cost is based on the type and amount of filament used per gram.]
+			        {t("printingBody")}
 
 			        </Card.Text>
 
 			        <Container className="signUpContainer">
-			        <Link to='/WorldbuilderWorkshop/services/printer'><Button className="bookBtn" as="input" type="button" value="Reserve a Printer"/></Link>
+			        <Link to='/WorldbuilderWorkshop/services/printer'><Button className="bookBtn" as="input" type="button" value={t("reservePrinter")}/></Link>
 			        </Container>
 			        
 			      </Card.Body>
@@ -101,7 +115,7 @@ const Services = () => {
 				
 				<Col xs={4} style={{"margin-left":"10px"}}>
 
-				<Card style={{'border': 'none', 'width': '30rem'}} className="mx-auto">
+				<Card style={{'border': 'none', 'width': '30rem', 'backgroundColor': '#1d6957'}} className="mx-auto">
 			      <Card.Body>
 
 
@@ -133,17 +147,15 @@ const Services = () => {
 				      </Carousel.Item>
 				    </Carousel>
 
-			        <Card.Title>Prop Commissions</Card.Title>
+			        <Card.Title style={{"color":"#F2F2F0"}}>{t("commissions")}</Card.Title>
 
-			        <Card.Text style={{"margin-bottom":"10px", "margin-top":"20px", "margin-left":"15px"}}>
+			        <Card.Text style={{"margin-bottom":"10px", "margin-top":"20px", "margin-left":"15px", "color":"#F2F2F0"}}>
 			        
-			          [A brief description of what this service entails and its options. 
-			          Cost is based on the user's budget, cost of materials, and 
-			          the service flat rate.]
+			          {t("commissionsBody")}
 			        </Card.Text>
 
 			        <Container className="signUpContainer">
-			        <Link to='/WorldbuilderWorkshop/services/commission'><Button className="bookBtn" as="input" type="button" value="Commission an Item"/></Link>
+			        <Link to='/WorldbuilderWorkshop/services/commission'><Button className="bookBtn" as="input" type="button" value={t("commissionItem")}/></Link>
 			        </Container>
 			        
 			      </Card.Body>

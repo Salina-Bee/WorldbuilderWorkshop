@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 // react-bootstrap
@@ -19,10 +19,11 @@ const Products = () => {
 	
 	// pagination variables
 	const [currentPage, setCurrentPage] = useState(1);
-	const [postsPerPage, setPostsPerPage] = useState(6);
+	const postsPerPage = 6;
 	const lastPostIndex = currentPage * postsPerPage; // default: 6
 	const firstPostIndex = lastPostIndex - postsPerPage; // default: 0
-	let products = Data["products"];
+	const [products, setProducts] = useState(Data["products"]);
+
 	const currentProducts = products.slice(firstPostIndex, lastPostIndex);
 
 	// tooltip variables
@@ -33,6 +34,27 @@ const Products = () => {
   	const target2 = useRef(null);
   	const target3 = useRef(null);
 
+  	// filter variables
+  	const [facetIsChecked, setFacetIsChecked] = useState({
+		facets:[
+			{name:"Primers", isChecked:false},
+			{name:"Thinners & Solvents", isChecked:false},
+			{name:"Top Coat", isChecked:false},
+			{name:"Weathering & Washes", isChecked:false},
+			{name:"Bases", isChecked:false},
+			{name:"Brushes", isChecked:false},
+			{name:"Decals", isChecked:false},
+			{name:"Knives & Saws", isChecked:false},
+			{name:"Masking Products", isChecked:false},
+			{name:"Nippers & Tweezers", isChecked:false},
+			{name:"Sanding Tools", isChecked:false},
+			{name:"Scribing Tools", isChecked:false},
+			{name:"Books", isChecked:false},
+			{name:"Dice", isChecked:false},
+			{name:"Miniatures", isChecked:false},
+			{name:"Miscellaneous", isChecked:false}
+		]
+	});
 	
 
 	const handleNext = () => {
@@ -45,7 +67,50 @@ const Products = () => {
 
 	const handleClear = () => {
 		setCurrentPage(1); // return to first page
+		setProducts(Data["products"]);
 	}
+
+	const handleFacetChecked = (name, isChecked) => {
+		const array = facetIsChecked["facets"];
+
+		for (var i = 0; i < array.length; i++) {
+			if (array[i]["name"] === name) {
+				array[i]["isChecked"] = isChecked;
+			}
+		}
+
+		setFacetIsChecked({facets:array});
+	}
+
+	const handleFilter = () => {
+
+		const array = Data["products"];
+		const array2 = facetIsChecked["facets"];
+		var checkedFacets = [];
+		var updatedList = [];
+		var allFalse = true;
+
+		// get a list of all checked facets
+		for (var i = 0; i < array2.length; i++) {
+			if (array2[i]["isChecked"]) {
+				checkedFacets.push(array2[i]);
+				allFalse = false;
+			}
+		}
+
+		if (allFalse) {
+			handleClear();
+		} else {
+			for (var j = 0; j < checkedFacets.length; j++) {
+				const result = array.filter((elem) => elem["type"] == checkedFacets[j]["name"]);
+				updatedList = updatedList.concat(result);
+			}
+
+			setProducts(updatedList);
+		}
+		
+	}
+
 
 	return (
 		<div>
@@ -55,13 +120,10 @@ const Products = () => {
 				<Row className="justify-content-center">
 				
 				<Col xs={10}>
-				<Row>
-					<Col xs={1} className="bannerBBG">
-					</Col>
+				<Row className="justify-content-center">
+
 					<Col xs={10} className="bannerBG">
 					<h4 className="bannerTitle">Products</h4>
-					</Col>
-					<Col xs={1} className="bannerBBG">
 					</Col>
 				</Row>
 				</Col>
@@ -77,7 +139,7 @@ const Products = () => {
 
 				<Col xs={3} >
 				
-				<Container className="filterContainer">
+				<div className="filterContainer">
 				<Row className="justify-content-center">
 				<Col xs={10}>
 				<Form>
@@ -87,36 +149,36 @@ const Products = () => {
 				<Button className="infoBtn" ref={target} onClick={() => setShow1(!show1)} onFocusOut={() => setShow1(false)}>?</Button>
 				</div>
 
-				<Form.Check label="Primers" name="paints" type="checkbox"/>
-				<Form.Check label="Thinners & Solvents" name="paints" type="checkbox"/>
-				<Form.Check label="Top Coat" name="paints" type="checkbox"/>
-				<Form.Check label="Weathering & Washes" name="paints" type="checkbox"/>
+				<Form.Check label="Primers" name="Primers" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Thinners & Solvents" name="Thinners & Solvents" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Top Coat" name="Top Coat" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Weathering & Washes" name="Weathering & Washes" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
 
 				<div className="filterHeader">
 				<h5 className="productFilterTitle">Tools & Supplies&nbsp;</h5>
 				<Button className="infoBtn" ref={target2} onClick={() => setShow2(!show2)}>?</Button>
 				</div>
 
-				<Form.Check label="Bases" name="tools" type="checkbox"/>
-				<Form.Check label="Brushes" name="tools" type="checkbox"/>
-				<Form.Check label="Decals" name="tools" type="checkbox"/>
-				<Form.Check label="Knives & Saws" name="tools" type="checkbox"/>
-				<Form.Check label="Masking Products" name="tools" type="checkbox"/>
-				<Form.Check label="Nippers & Tweezers" name="tools" type="checkbox"/>
-				<Form.Check label="Sanding Tools" name="tools" type="checkbox"/>
-				<Form.Check label="Scribing Tools" name="tools" type="checkbox"/>
+				<Form.Check label="Bases" name="Bases" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Brushes" name="Brushes" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Decals" name="Decals" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Knives & Saws" name="Knives & Saws" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Masking Products" name="Masking Products" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Nippers & Tweezers" name="Nippers & Tweezers" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Sanding Tools" name="Sanding Tools" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Scribing Tools" name="Scribing Tools" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
 
 				<div className="filterHeader">
 				<h5 className="productFilterTitle">TTRPG&nbsp;</h5>
 				<Button className="infoBtn" ref={target3} onClick={() => setShow3(!show3)}>?</Button>
 				</div>
 
-				<Form.Check label="Books" name="ttrpg" type="checkbox"/>
-				<Form.Check label="Dice" name="ttrpg" type="checkbox"/>
-				<Form.Check label="Miniatures" name="ttrpg" type="checkbox"/>
-				<Form.Check label="Miscellaneous" name="ttrpg" type="checkbox"/>
+				<Form.Check label="Books" name="Books" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Dice" name="Dice" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Miniatures" name="Miniatures" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
+				<Form.Check label="Miscellaneous" name="Miscellaneous" type="checkbox" onChange={(e) => handleFacetChecked(e.target.name, e.target.checked)}/>
 				<div className="productBtnsContainer">
-				<Button className="filterBtn">Filter</Button>
+				<Button className="filterBtn" onClick={handleFilter}>Filter</Button>
 				<Button className="clearBtn" type="reset" onClick={handleClear}>Clear All</Button>
 				</div>
 				</Form>
@@ -124,7 +186,7 @@ const Products = () => {
 				</Row>
 
 
-				</Container>
+				</div>
 
 
 
@@ -133,7 +195,8 @@ const Products = () => {
 				<Col xs={8}>
 
 				<Row>
-				<p style={{'margin-left': '3px'}}>Showing {firstPostIndex+1}-{(Math.min(lastPostIndex, products.length))} of {products.length} entries</p>
+				{((Math.min(lastPostIndex, products.length)) != 0 && <p style={{'margin-left': '3px'}}>Showing {firstPostIndex+1}-{(Math.min(lastPostIndex, products.length))} of {products.length} entries</p>) || 
+				 <p style={{'margin-left': '3px'}}>There are no entries matching the filter. Please come back later!</p>}
 				</Row>
 
 				<Row className="cards">
@@ -159,7 +222,7 @@ const Products = () => {
 				</Row>
 
 
-				<Row className="justify-content-center">
+				{Math.min(lastPostIndex, products.length) != 0 && <Row className="justify-content-center">
 				<Col xs={5} className="productBtnContainer1">
 				<Button className="prevBtn" onClick={handlePrev} disabled={currentPage==1}>Previous</Button>
 				</Col>
@@ -167,7 +230,7 @@ const Products = () => {
 				<Col xs={5}>
 				<Button className="nextBtn" onClick={handleNext} disabled={lastPostIndex >= products.length}>Next</Button>
 				</Col>
-				</Row>
+				</Row>}
 				<br/>
 
 				</Col>

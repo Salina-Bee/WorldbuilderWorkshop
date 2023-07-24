@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useRef } from 'react';
 
 // react-bootstrap
@@ -17,6 +17,13 @@ const Commission = () => {
 
 	const [show, setShow] = useState(false);
 	const target = useRef(null);
+	const navigate = useNavigate();
+
+	const handleCancel = () => {
+		if (window.confirm("Are you sure you want to go back? Your progress in this form will not be saved.")) {
+			navigate("/WorldbuilderWorkshop/services");
+		} 
+	}
 
 	return (
 		<div>
@@ -26,33 +33,28 @@ const Commission = () => {
 				<Row className="justify-content-center">
 				
 				<Col xs={10}>
-				<Row>
-					<Col xs={1} className="bannerBBG">
-					</Col>
+				<Row className="justify-content-center">
 					<Col xs={10} className="bannerBG">
 					<h4 className="bannerTitle">Commission a Custom Prop</h4>
 					</Col>
-					<Col xs={1} className="bannerBBG">
-					</Col>
+
 				</Row>
 				</Col>
 				
 				</Row>
 
 				<br/>
-				<br/>
 			</Container>
 
 			<Container>
 
-			<p>Please fill out the form below to request a commission. Once we've evaluated the feasibility of your request, we'll get back to you as soon as possible!</p>
-			<br/>
+			<p style={{"marginTop":"20px"}}>Please fill out the form below to request a commission. Once we've evaluated the feasibility of your request, we'll get back to you as soon as possible!</p>
 
 			<Form>
 
-			<h4> Personal Information </h4>
-			<br/>
-			<Row>
+			<h4 style={{"marginBottom":"20px"}}> Personal Information </h4>
+
+			<Row style={{"marginBottom":"15px"}}>
 
 				<Col xs={3}>
 				<Form.Group className="mb-3">
@@ -70,9 +72,7 @@ const Commission = () => {
 
 
 			</Row>
-
-			<br/>
-			<Row>
+			<Row style={{"marginBottom":"20px"}}>
 
 				<Col xs={4}>
 
@@ -94,26 +94,22 @@ const Commission = () => {
 
 			</Row>
 
-			<br/>
-			<h4> Commission Information </h4>
-			<br/>
+			<h4 style={{"marginBottom":"20px"}}> Commission Information </h4>
 
-			<Row>
+			<Row style={{"marginBottom":"15px"}}>
 
 				<Col xs={6}>
 				<Form.Group className="mb-3">
 			        <Form.Label>Commission Name</Form.Label>
 			        <Form.Control type="text" placeholder="Enter commission name" style={{'width':'20em'}}/>
-			        <Form.Text style={{'color':'#d7eafc'}}>
-				    This is what we'll refer to your commission as whenever we contact you. Keep it short and sweet!
+			        <Form.Text style={{'color':'#17614f', 'marginLeft':"5px"}}>
+				    This is what we'll refer to your commission as when we contact you. Keep it short and sweet!
 				    </Form.Text>
 	      		</Form.Group>
 	      		</Col>
 
 	      	</Row>
-
-	      	<br/>
-			<Row>
+			<Row style={{"marginBottom":"20px"}}>
 
 				<Col xs={3}>
 				<Form.Group className="mb-3">
@@ -128,10 +124,8 @@ const Commission = () => {
 		      	</Form.Group>
 		      	</Col>
 
-		      	
 	      	</Row>
-	      	<br/>
-	      	<Row>
+	      	<Row style={{"marginBottom":"15px"}}>
 	      		<Col xs={3}>
 		      	<Form.Group className="mb-3">
 		      		<Form.Label>Estimated Size <Button className="infoBtn2" ref={target} onClick={() => setShow(!show)} onFocusOut={() => setShow(false)}>?</Button></Form.Label>
@@ -148,8 +142,7 @@ const Commission = () => {
 		      	</Col>
 	      		
 	      	</Row>
-	      	<br/>
-	      	<Row>
+	      	<Row style={{"marginBottom":"15px"}}>
 
 	      		<Col xs={8}>
 		      	<Form.Group className="mb-3">
@@ -161,18 +154,19 @@ const Commission = () => {
 
 	      	</Row>
 
-	      	<br/>
-	      	<Row>
+	      	<Row style={{"marginBottom":"20px"}}>
 
 	      		<Col xs={8}>
 		      	<Form.Group className="mb-3">
 		      		<Form.Label>Are there any other specifications you would like us to consider? (Optional)</Form.Label>
-				    <Form.Control as="textarea" style={{'height':'100px'}} placeholder="Write additional details/requirements here. This "/>
+				    <Form.Control as="textarea" style={{'height':'100px'}} placeholder="Write additional details/requirements here. This can include details such as what materials/resources you want to provide to offset the cost, or when you need the commission completed at the latest."/>
 		      	</Form.Group>
 		      	</Col>
 
 	      	</Row>
 
+	      	<br/>
+	      	<Button className="signInButtonNotNav" as="input" type="button" value="Cancel" style={{"marginRight": "30px"}} onClick={handleCancel}/>
 	      	<Link to="/WorldbuilderWorkshop"><Button className="signInButtonNotNav" as="input" type="button" value="Submit"/></Link>
 
 			</Form>

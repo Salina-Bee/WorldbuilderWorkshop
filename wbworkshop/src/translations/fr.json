@@ -1,0 +1,19 @@
+{
+	"translation": {
+		"title": "L'atelier du bâtisseur de monde",
+		"lang": "FR",
+		"link1": "Page d'accueil",
+		"link2": "Produits",
+		"link3": "Services",
+		"link4": "Communauté",
+		"signIn": "Se connecter",
+		"signOut": "Se déconnecter",
+		"myPosts": "Mes publications",
+		"printing": "Impression 3D",
+		"commissions": "Commissions d'accessoires",
+		"printingBody": "[Brève description de ce service et de ses options. Le coût est basé sur le type et la quantité de filament utilisé par gramme].",
+		"commissionsBody": "[Brève description de ce service et de ses options. Le coût est basé sur le budget de l'utilisateur, le coût des matériaux et le forfait du service].",
+		"reservePrinter": "Réserver une imprimante",
+		"commissionItem": "Commander un article personnalisé"
+	}
+}

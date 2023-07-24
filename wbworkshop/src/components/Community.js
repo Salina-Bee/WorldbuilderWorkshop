@@ -9,6 +9,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import Stack from 'react-bootstrap/Stack';
+import Form from 'react-bootstrap/Form';
 
 // data
 import Data from '../data/db.json';
@@ -16,12 +17,14 @@ import Data from '../data/db.json';
 const Community = () => {
 	
 	const [show, setShow] = useState(true);
+	var status = localStorage.getItem("isSignedIn");
+	status = "false";
 
 	const [currentPage, setCurrentPage] = useState(1);
-	const [postsPerPage, setPostsPerPage] = useState(8);
+	const postsPerPage = 8;
 	const lastPostIndex = currentPage * postsPerPage; // default: 10
 	const firstPostIndex = lastPostIndex - postsPerPage; // default: 0
-	let posts = Data["posts"];
+	const [posts, setPosts] = useState(Data["posts"]);
 	const currentPosts = posts.slice(firstPostIndex, lastPostIndex);
 
 	const handleNext = () => {
@@ -31,6 +34,21 @@ const Community = () => {
 	const handlePrev = () => {
 		setCurrentPage(currentPage-1);
 	}
+
+	const handleType = (type) => {
+		console.log(type);
+		var array = Data["posts"];
+
+		if (type === "All") {
+			setPosts(Data["posts"]);
+		} else {
+			setPosts(array.filter((elem) => elem["type"] == type));
+			console.log(posts);
+		}
+	}
+
+
+
 
 	return (
 		<div>
@@ -55,10 +73,9 @@ const Community = () => {
 			</Container>
 
 			<br/>
-			<br/>
 			<Container>
 
-			 
+			 	{status == "false" &&
 				<Alert variant="info" onClose={() => setShow(false)} dismissible>
 					You must be signed in to create and comment on posts. 
 					&nbsp;&nbsp;&nbsp;
@@ -66,18 +83,40 @@ const Community = () => {
 					&nbsp;&nbsp;|&nbsp;&nbsp;
 					<Link to='/WorldbuilderWorkshop/signup'>Sign Up</Link>
 				</Alert>
+				 }
 
-			<br/>
-			
+			{status == "true" && 
+			<Row>
+		    	<Col xs={2}>
+		    		<Link to="/WorldbuilderWorkshop/newpost"><Button className="signInButtonNotNav" as="input" type="button" value="New Post"/></Link>
+		    	</Col>
+		    	<br/>
+		    </Row>
+			}
+			<Row>
+				<Col xs={2}>
+					<Form.Label><h5>Post Type</h5></Form.Label>
+					<Form.Select className="mb-5" onChange={(e) => {handleType(e.target.value)}}>
+					      <option selected value="All">All</option>
+					      <option value="Announcement">Announcement</option>
+					      <option value="Guide/Opinion">Guide/Opinion</option>
+					      <option value="Showcase">Showcase</option>
+					      <option value="Other">Other</option>
+		    		</Form.Select>
+		    	</Col>
+		    	
+    		</Row>
+
 			<Stack gap={postsPerPage}>
 			{currentPosts.map((post) => (
 					
 					<div key={post.id}>
 					
-					{currentPage == 1 && post.id==1 && <h4 style={{"margin-bottom":"20px"}}>Pinned</h4>}
+					{((currentPage == 1 && post.id==1) || (currentPage == 1 && posts[0]["id"] == 2 && post.id==2) )&& <h4 style={{"margin-bottom":"20px"}}>Pinned</h4>}
 					
-					<Link to={'/WorldbuildersWorkshop/community/' + post.id}>
+					<Link to={'/WorldbuilderWorkshop/community/' + post.id}>
 					<div className="p-2">
+
 						<Row>
 						<Col xs={10} style={{"padding-left": "20px", "display":"flex", "align-items": "center"}}>
 
@@ -90,6 +129,13 @@ const Community = () => {
 						</Col>
 						</Row>
 
+						<Row>
+						<Col style={{"padding-left": "22px"}}>
+						<em>{post.type}</em>
+						</Col>
+						</Row>
+
+
 
 
 					</div>
@@ -97,7 +143,7 @@ const Community = () => {
 					</Link>
 					<br/>
 
-					{currentPage == 1 && post.id==2 && <div><br/><hr className="horizontal"/><br/></div>}
+					{currentPage == 1 && post.id==2 && <div><hr className="horizontal"/><br/></div>}
 
 
 				

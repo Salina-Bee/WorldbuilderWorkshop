@@ -1,16 +1,7 @@
 .bannerBG {
-  background-color: #1B2941;
+  background-color: #1d6957;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-.bannerBBG {
-  background-color: #25546E;
-  border: 1px solid #1B2941;
-}
-
-.bannerPicture {
-  text-align: center;
 }
 
 .bannerRow {
@@ -22,13 +13,17 @@
 }
 
 .bannerSubtitle {
-  color:white;
-  text-align: center;
+  color:#0f4034;
   margin-top: 10px;
 }
 
+.commentContainer {
+  background-color: #42b89c;
+}
+
+
 a .bookBtn {
-  background-color: #306f91;
+  background-color: #318EAD;
   border: none;
   font-size: 18px;
   font-weight: bold;
@@ -38,17 +33,13 @@ a .bookBtn {
   padding-bottom: 10px;
   padding-left: 25px;
   padding-right: 25px;
-
 }
 
-.card a {
-  text-decoration: none;
+.bookBtn:hover {
+  background-color: #3db4db !important;
 }
 
-.card .card-body {
-  background-color: #1B2941;
-  color: #F2F2F0;
-}
+
 
 .card-title {
   text-align: center;
@@ -61,7 +52,7 @@ a .bookBtn {
 }
 
 .generalBG {
-  background-color: #1B2941;
+  background-color: #1d6957;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-bottom: 10px;
@@ -71,7 +62,7 @@ a .bookBtn {
     margin: 10px 0;
     height: 1px;
     border: none;
-    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, #4ba8db));
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, #0e4734));
 }
 
 .signUpContainer {
@@ -80,35 +71,49 @@ a .bookBtn {
 }
 
 a p {
-  color: #F2F2F0;
+  color: #0f4034;
 }
 
 a .p-2 {
-  background-color: #1B2941;
+  background-color: #1d6957;
   color: #F2F2F0;
   max-height: 120px;
-  text-decoration: none !important;
+  text-decoration: underline;
+  text-decoration-color:#1d6957 !important;
 }
 
-a .signInButtonNotNav {
-  background-color: #306f91;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
+.card a .card-text{
+
+  color: #F2F2F0 ;
 }
 
-a .signInButtonNotNav:hover {
-  background-color: #1B2941;
+.card a .card-body {
+  background-color: #1d6957;
+  color: #F2F2F0;
+  text-decoration: underline;
+  text-decoration-color: #1d6957;
+}
+
+
+.signInButtonNotNav {
+  background-color: #26755d !important;
+  border: none  !important;
+  font-size: 18px  !important;
+  font-weight: bold  !important;
+  margin-top: 15px  !important;
+  margin-bottom: 20px  !important;
+  padding-top: 10px  !important;
+  padding-bottom: 10px  !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+
+.signInButtonNotNav:hover {
+  background-color: #1d6957 !important;
 }
 
 a .signUpButton {
-  background-color: #306f91;
+  background-color: #26755d;
   border: none;
   font-weight: bold;
   font-size: 20px;
@@ -120,7 +125,7 @@ a .signUpButton {
 }
 
 a .signUpButton:hover {
-  background-color: #1B2941;
+  background-color: #1d6957;
 }
 
 .productFilterTitle {
@@ -129,12 +134,12 @@ a .signUpButton:hover {
 }
 
 .filterContainer {
-  background-color: #25546E;
+  background-color: #42b89c;
   padding-left: 20px;
 }
 
 form .filterBtn {
-  background-color: #1B2941;
+  background-color: #1d6957;
   border: none;
   font-weight: bold;
   margin-top: 15px;
@@ -147,7 +152,7 @@ form .filterBtn {
 }
 
 form .clearBtn {
-  background-color: #1B2941;
+  background-color: #1d6957;
   border: none;
   font-weight: bold;
   margin-top: 15px;
@@ -160,12 +165,12 @@ form .clearBtn {
 }
 
 form .filterBtn:hover, form .clearBtn:hover {
-  background-color: #1B2941 !important;
+  background-color: #1d6957 !important;
 }
 
 .form-check-input:checked {
-  background-color: #1B2941 !important;
-  border-color: #1B2941 !important;
+  background-color: #1d6957 !important;
+  border-color: #1d6957 !important;
 }
 
 .productImage {
@@ -203,7 +208,7 @@ form .filterBtn:hover, form .clearBtn:hover {
 
 
 .prevBtn {
-  background-color: #1B2941 !important;
+  background-color: #1d6957 !important;
   border: none !important; 
   font-weight: bold !important;
   margin-right: 10px !important;
@@ -214,7 +219,7 @@ form .filterBtn:hover, form .clearBtn:hover {
 }
 
 .nextBtn {
-  background-color: #1B2941 !important;
+  background-color: #1d6957 !important;
   border: none !important;
   font-weight: bold !important;
   margin-left: 10px !important;
@@ -225,7 +230,7 @@ form .filterBtn:hover, form .clearBtn:hover {
 }
 
 form .infoBtn {
-  background-color: #1B2941;
+  background-color: #1d6957;
   margin-top: 20px;
   margin-bottom: 10px;
   padding-top: 0px;
@@ -237,11 +242,11 @@ form .infoBtn {
 }
 
 form .infoBtn:hover {
-  background-color: #1B2941;
+  background-color: #1d6957;
 }
 
 form .infoBtn2 {
-  background-color: #1B2941;
+  background-color: #1d6957;
   padding-top: 0px;
   padding-bottom: 0px;
   margin-bottom: 5px;
@@ -257,7 +262,7 @@ form .infoBtn2 {
 }
 
 .row .backBtn {
-  background-color: #1B2941;
+  background-color: #1d6957;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -269,5 +274,67 @@ form .infoBtn2 {
 }
 
 .row .backBtn:hover, .backBtn:active {
-  background-color: #1B2941 !important;
+  background-color: #1d6957 !important;
 }
+
+.center-navbar {
+  max-height: 10%;
+}
+
+.center-navbar .nav-item a {
+  color: #F2F2F0;
+  margin-left: 15px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.navbar {
+  font-weight: bold;
+  font-size: 15px;
+  color: #F2F2F0;
+  background-color:#1d6957;
+}
+
+.navbar .navbar-brand {
+  color: #F2F2F0; 
+  font-size: 17px;
+  margin-left: 20px;
+}
+
+.navbar .navbar-brand:hover {
+  color: #F2F2F0;;  
+}
+
+.navbar-toggler {
+  color: #F2F2F0;
+}
+
+.nav-item a:hover {
+  color:#56cbe8;
+}
+
+.nav-item .signInButton {
+  background-color: #318EAD;
+  border: none;
+  color: #F2F2F0;
+  font-weight:bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-item .signInButton:hover {
+  background-color: #3db4db;
+}
+
+.signInButton {
+  background-color: #318EAD;
+  border: none;
+  color: #F2F2F0;
+  font-weight:bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+

@@ -59,7 +59,7 @@ const SignIn = () => {
 
 				<Container>
 					<p><u>Forgot your password?</u></p>
-					<Link to="/WorldbuildersWorkshop/signup"><p><u>Don't have an account? Sign up now.</u></p></Link>
+					<Link to="/WorldbuilderWorkshop/signup"><p><u>Don't have an account? Sign up now.</u></p></Link>
 				</Container>
 				</Col>
 			</Row>
