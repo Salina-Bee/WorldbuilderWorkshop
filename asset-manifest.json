@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/WorldbuilderWorkshop/static/css/main.f66b8dea.css",
-    "main.js": "/WorldbuilderWorkshop/static/js/main.e1659700.js",
+    "main.js": "/WorldbuilderWorkshop/static/js/main.33dd8f87.js",
     "static/js/787.af08e1ca.chunk.js": "/WorldbuilderWorkshop/static/js/787.af08e1ca.chunk.js",
     "static/media/products.png": "/WorldbuilderWorkshop/static/media/products.45abb685e4f72993ae52.png",
     "static/media/signup.jpg": "/WorldbuilderWorkshop/static/media/signup.73ba68814ab537d8f9f8.jpg",
@@ -24,11 +24,11 @@
     "static/media/profile.png": "/WorldbuilderWorkshop/static/media/profile.30b496116e65308d3d4d.png",
     "index.html": "/WorldbuilderWorkshop/index.html",
     "main.f66b8dea.css.map": "/WorldbuilderWorkshop/static/css/main.f66b8dea.css.map",
-    "main.e1659700.js.map": "/WorldbuilderWorkshop/static/js/main.e1659700.js.map",
+    "main.33dd8f87.js.map": "/WorldbuilderWorkshop/static/js/main.33dd8f87.js.map",
     "787.af08e1ca.chunk.js.map": "/WorldbuilderWorkshop/static/js/787.af08e1ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f66b8dea.css",
-    "static/js/main.e1659700.js"
+    "static/js/main.33dd8f87.js"
   ]
 }
